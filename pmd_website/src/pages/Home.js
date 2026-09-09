@@ -1,14 +1,18 @@
-import React from 'react'
-import Header from '../components/Header'
+import Header from "../components/Header";
+import HeroSection from "../components/HeroSection";
+
 
 const Home = () => {
   return (
-    <div>
+    <div className="min-h-screen bg-slate-50 text-slate-800">
 
-        <Header />
+
+      <Header />
+      <HeroSection />
+
       
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

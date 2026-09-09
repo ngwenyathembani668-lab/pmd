@@ -1,0 +1,656 @@
+
+
+.hero {
+  width: 100%;
+  min-height: calc(100vh - 76px);
+
+  background: #f8fafc;
+  color: #1e293b;
+
+  overflow: hidden;
+}
+
+.hero-container {
+  width: 100%;
+  max-width: 1280px;
+
+  min-height: calc(100vh - 76px);
+
+  margin: 0 auto;
+  padding: 80px 32px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+
+  gap: 80px;
+
+  box-sizing: border-box;
+}
+
+/* =========================================
+   LEFT SIDE - CONTENT
+   ========================================= */
+
+.hero-content {
+  width: 100%;
+  max-width: 620px;
+}
+
+.hero-eyebrow {
+  display: inline-block;
+
+  margin-bottom: 20px;
+
+  color: #0ea5e9;
+
+  font-family: "Poppins", "Montserrat", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hero-heading {
+  margin: 0;
+
+  color: #1e293b;
+
+  font-family: "Poppins", "Montserrat", sans-serif;
+  font-size: clamp(2.8rem, 5vw, 4.5rem);
+  font-weight: 800;
+
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+}
+
+.hero-subheadline {
+  max-width: 560px;
+
+  margin: 28px 0 0;
+
+  color: #64748b;
+
+  font-family: "Poppins", "Montserrat", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 400;
+
+  line-height: 1.8;
+}
+
+/* =========================================
+   BUTTONS
+   ========================================= */
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  margin-top: 36px;
+}
+
+.hero-button {
+  min-height: 52px;
+
+  padding: 0 26px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 8px;
+
+  font-family: "Poppins", "Montserrat", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+
+  text-decoration: none;
+  white-space: nowrap;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+/* Primary Button */
+
+.hero-button-primary {
+  background: #0ea5e9;
+  color: #ffffff;
+
+  border: 2px solid #0ea5e9;
+}
+
+.hero-button-primary:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 10px 25px rgba(14, 165, 233, 0.25);
+}
+
+/* Secondary Button */
+
+.hero-button-secondary {
+  background: transparent;
+  color: #1e293b;
+
+  border: 2px solid #1e293b;
+}
+
+.hero-button-secondary:hover {
+  background: #1e293b;
+  color: #ffffff;
+}
+
+/* =========================================
+   RIGHT SIDE - VISUAL
+   ========================================= */
+
+.hero-visual {
+  position: relative;
+
+  width: 100%;
+  min-width: 0;
+
+  padding: 20px;
+
+  box-sizing: border-box;
+}
+
+/* Main Card */
+
+.hero-visual-card {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  min-height: 500px;
+
+  background: #1e293b;
+
+  border-radius: 24px;
+
+  overflow: hidden;
+
+  border: 1px solid #334155;
+
+  box-shadow:
+    0 30px 60px rgba(30, 41, 59, 0.18),
+    0 10px 20px rgba(30, 41, 59, 0.08);
+}
+
+/* =========================================
+   CARD TOP BAR
+   ========================================= */
+
+.visual-topbar {
+  height: 64px;
+
+  padding: 0 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid rgba(248, 250, 252, 0.1);
+
+  box-sizing: border-box;
+}
+
+.visual-dots {
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+}
+
+.visual-dots span {
+  width: 8px;
+  height: 8px;
+
+  display: block;
+
+  border-radius: 50%;
+
+  background: #64748b;
+}
+
+.visual-label {
+  color: #94a3b8;
+
+  font-family: "Poppins", "Montserrat", sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* =========================================
+   CARD CONTENT
+   ========================================= */
+
+.visual-content {
+  min-height: 436px;
+
+  padding: 48px 38px 30px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  box-sizing: border-box;
+}
+
+.visual-badge {
+  margin-bottom: 18px;
+
+  color: #38bdf8;
+
+  font-family: "Poppins", "Montserrat", sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+
+  letter-spacing: 0.16em;
+}
+
+/* Visual Heading */
+
+.visual-title {
+  display: flex;
+  flex-direction: column;
+
+  color: #f8fafc;
+
+  font-family: "Poppins", "Montserrat", sans-serif;
+  font-size: clamp(2.5rem, 4vw, 3.8rem);
+  font-weight: 500;
+
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+.visual-title strong {
+  color: #38bdf8;
+
+  font-weight: 800;
+}
+
+/* =========================================
+   SERVICE TILES
+   ========================================= */
+
+.visual-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 12px;
+
+  margin-top: 48px;
+}
+
+.visual-tile {
+  min-height: 110px;
+
+  padding: 16px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  border-radius: 12px;
+
+  box-sizing: border-box;
+
+  font-family: "Poppins", "Montserrat", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.visual-tile-icon {
+  font-size: 1.5rem;
+
+  line-height: 1;
+}
+
+/* Print */
+
+.visual-tile-print {
+  background: #0ea5e9;
+  color: #ffffff;
+}
+
+/* Branding */
+
+.visual-tile-brand {
+  background: #e0f2fe;
+  color: #1e293b;
+}
+
+/* Digital */
+
+.visual-tile-digital {
+  background: #334155;
+  color: #f8fafc;
+}
+
+/* =========================================
+   CARD FOOTER
+   ========================================= */
+
+.visual-bottom {
+  margin-top: 40px;
+  padding-top: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-top: 1px solid rgba(248, 250, 252, 0.1);
+
+  color: #94a3b8;
+
+  font-family: "Poppins", "Montserrat", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.visual-arrow {
+  color: #38bdf8;
+
+  font-size: 1.25rem;
+}
+
+/* =========================================
+   DECORATIVE BACKGROUND ELEMENTS
+   ========================================= */
+
+.visual-accent {
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+.visual-accent-one {
+  width: 180px;
+  height: 180px;
+
+  top: -10px;
+  right: -5px;
+
+  background: #bae6fd;
+
+  opacity: 0.65;
+
+  z-index: 0;
+}
+
+.visual-accent-two {
+  width: 130px;
+  height: 130px;
+
+  bottom: -10px;
+  left: -5px;
+
+  background: #e0f2fe;
+
+  opacity: 0.8;
+
+  z-index: 0;
+}
+
+/* =========================================
+   LARGE TABLETS
+   ========================================= */
+
+@media (max-width: 1100px) {
+  .hero-container {
+    gap: 50px;
+
+    padding: 70px 28px;
+  }
+
+  .hero-heading {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+  }
+
+  .hero-visual-card {
+    min-height: 450px;
+  }
+
+  .visual-content {
+    min-height: 386px;
+
+    padding: 40px 28px 26px;
+  }
+
+  .visual-grid {
+    gap: 8px;
+
+    margin-top: 36px;
+  }
+
+  .visual-tile {
+    min-height: 95px;
+
+    padding: 12px;
+  }
+}
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 900px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+
+    max-width: 760px;
+
+    min-height: auto;
+
+    padding: 80px 24px;
+
+    gap: 60px;
+  }
+
+  .hero-content {
+    max-width: 680px;
+  }
+
+  .hero-heading {
+    font-size: clamp(2.7rem, 7vw, 4rem);
+  }
+
+  .hero-subheadline {
+    max-width: 600px;
+  }
+
+  .hero-visual {
+    width: 100%;
+
+    padding: 10px;
+  }
+
+  .hero-visual-card {
+    min-height: 470px;
+  }
+}
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: auto;
+  }
+
+  .hero-container {
+    padding: 60px 20px 70px;
+
+    gap: 48px;
+  }
+
+  .hero-content {
+    text-align: left;
+  }
+
+  .hero-eyebrow {
+    margin-bottom: 16px;
+
+    font-size: 0.7rem;
+  }
+
+  .hero-heading {
+    font-size: clamp(2.2rem, 9vw, 3.2rem);
+
+    line-height: 1.12;
+  }
+
+  .hero-subheadline {
+    margin-top: 22px;
+
+    font-size: 0.95rem;
+
+    line-height: 1.75;
+  }
+
+  .hero-actions {
+    margin-top: 30px;
+
+    gap: 12px;
+  }
+
+  .hero-button {
+    min-height: 50px;
+
+    padding: 0 22px;
+  }
+
+  .hero-visual {
+    padding: 0;
+  }
+
+  .hero-visual-card {
+    min-height: 420px;
+
+    border-radius: 20px;
+  }
+
+  .visual-content {
+    min-height: 356px;
+
+    padding: 36px 24px 24px;
+  }
+
+  .visual-title {
+    font-size: clamp(2.3rem, 10vw, 3.2rem);
+  }
+
+  .visual-grid {
+    margin-top: 34px;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+   ========================================= */
+
+@media (max-width: 480px) {
+  .hero-container {
+    padding: 48px 16px 56px;
+
+    gap: 40px;
+  }
+
+  .hero-heading {
+    font-size: clamp(2rem, 10vw, 2.7rem);
+  }
+
+  .hero-subheadline {
+    font-size: 0.9rem;
+  }
+
+  .hero-actions {
+    width: 100%;
+
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .hero-button {
+    width: 100%;
+  }
+
+  .hero-visual-card {
+    min-height: 380px;
+
+    border-radius: 18px;
+  }
+
+  .visual-topbar {
+    height: 56px;
+
+    padding: 0 18px;
+  }
+
+  .visual-content {
+    min-height: 322px;
+
+    padding: 30px 20px 20px;
+  }
+
+  .visual-badge {
+    font-size: 0.62rem;
+  }
+
+  .visual-title {
+    font-size: 2.3rem;
+  }
+
+  .visual-grid {
+    gap: 6px;
+
+    margin-top: 28px;
+  }
+
+  .visual-tile {
+    min-height: 78px;
+
+    padding: 10px;
+
+    font-size: 0.72rem;
+  }
+
+  .visual-tile-icon {
+    font-size: 1.2rem;
+  }
+
+  .visual-bottom {
+    margin-top: 24px;
+
+    padding-top: 16px;
+
+    font-size: 0.65rem;
+  }
+
+  .visual-accent-one {
+    width: 120px;
+    height: 120px;
+  }
+
+  .visual-accent-two {
+    width: 90px;
+    height: 90px;
+  }
+}
+
+
+

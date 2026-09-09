@@ -1,25 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@500;600;700;800;900&display=swap");
 @import "tailwindcss";
 
 :root {
-  color: #0f172a;
-  background-color: #f8fafc;
-  font-family: "Segoe UI", sans-serif;
+  --slate-900: #1e293b;
+  --slate-50: #f8fafc;
+  --cyan-500: #0ea5e9;
+  --text-primary: #0f172a;
+  font-family: "Inter", "Segoe UI", sans-serif;
   line-height: 1.5;
   font-weight: 400;
   font-synthesis: none;
- 
+  text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* html,
-body,
-#root {
-  min-height: 100%;
-  height: 100%;
-  margin: 0;
-} */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   min-height: 100vh;
+  margin: 0;
+  background: var(--slate-50);
+  color: var(--text-primary);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poppins", "Segoe UI", sans-serif;
+  letter-spacing: -0.04em;
+}
+
+a {
+  text-decoration: none;
 }

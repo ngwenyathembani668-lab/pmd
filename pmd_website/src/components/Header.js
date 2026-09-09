@@ -1,40 +1,37 @@
-import React from 'react';
-import './Header.css';
+import "./Header.css";
 
-const Header = () => {
-    return (
+const navLinks = ["Home", "Services & Gallery", "Contact Us"];
 
+export default function Header() {
+  return (
+    <header className="header">
+      <nav className="navbar">
+        {/* Logo */}
+        <div className="logo" aria-label="PMD Logo">
+          PMD
+        </div>
 
-        <nav className='
-            flex
-            justify-between
-            p-20px
-        '>
+        {/* Desktop Navigation */}
+        <div className="nav-links">
+          {navLinks.map((link) => (
+            <p href="#" key={link} className="nav-link">
+              {link}
+            </p>
+          ))}
+        </div>
 
-            <div>
-                <span className='logo'>PMD</span>
-            </div>
+        {/* Desktop CTA */}
+        <p href="#" className="cta-button">
+          Get a Free Quote
+        </p>
 
-            <div>
-
-                <ul className='nav-links'>
-                    <li>Home</li>
-                    <li>Printing & ID</li>
-                    <li>Studio & Design</li>
-                    <li>Online Apps</li>
-                    <li>Vehicle & Shirts</li>
-                </ul>
-
-            </div>
-
-            <div>
-                <button className='head-btn'>Contact</button>
-            </div>
-
-        </nav>
-
-
-    )
+        {/* Mobile Hamburger - visual only */}
+        <div className="hamburger" aria-label="Mobile menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+    </header>
+  );
 }
-
-export default Header;
