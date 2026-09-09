@@ -1,0 +1,39 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 50px;
+    /* background: #000; */
+    align-items: center;
+}
+
+.head-btn {
+    background: #1e293b;
+    color: #fff;
+    padding: 0.4rem;
+    border-radius: 5px;
+}
+
+.head-btn:hover {
+    background: #1e293be8;
+    transition: 0.9s ease;
+    cursor: pointer;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    color: #000;
+}
+
+.nav-links > li:hover {
+    color: #0ea5e9;
+    transition: 0.9s ease;
+    cursor: pointer;
+}
+
+.logo {
+    color: #0ea5e9;
+    font-size: 1.4rem;
+    font-weight: 600;
+    font-weight: 600;
+}
