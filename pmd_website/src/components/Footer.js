@@ -1,51 +1,131 @@
+import React, { useState } from "react";
+import {
+FaFacebookF,
+FaInstagram,
+FaLinkedinIn,
+FaArrowRight,
+} from "react-icons/fa";
+import "./Footer.css";
+
 const Footer = () => {
-  return (
-    <footer id="contact" className="mt-16 bg-slate-900 text-slate-200">
-      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="grid gap-10 md:grid-cols-[1.1fr_0.7fr_0.7fr]">
-          <div>
-            <div className="flex items-center gap-3">
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-cyan-500 text-base font-black text-slate-900">
-                PMD
-              </div>
-              <div>
-                <div className="text-lg font-extrabold text-white">PMD</div>
-                <div className="text-[10px] uppercase tracking-[0.24em] text-slate-400">
-                  Pel Marketing Distribution
-                </div>
-              </div>
-            </div>
+const [email, setEmail] = useState("");
 
-            <p className="mt-5 max-w-md text-sm leading-7 text-slate-300">
-              Helping brands stand out through print, branding, and growth-focused marketing support that converts attention into action.
-            </p>
-          </div>
+const handleSubscribe = (event) => {
+event.preventDefault();
 
-          <div>
-            <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-400">Quick Links</h3>
-            <ul className="mt-5 space-y-3 text-sm text-slate-300">
-              <li><a href="#home" className="transition hover:text-white">Home</a></li>
-              <li><a href="#services" className="transition hover:text-white">Services</a></li>
-              <li><a href="#contact" className="transition hover:text-white">Contact</a></li>
-            </ul>
-          </div>
 
-          <div>
-            <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-400">Contact</h3>
-            <ul className="mt-5 space-y-3 text-sm text-slate-300">
-              <li>hello@pmdstudio.com</li>
-              <li>+62 812 3456 7890</li>
-              <li>Jakarta, Indonesia</li>
-            </ul>
-          </div>
-        </div>
+if (!email.trim()) {
+  alert("Please enter your email address.");
+  return;
+}
 
-        <div className="mt-10 border-t border-white/10 pt-6 text-sm text-slate-400">
-          © 2026 PMD. All rights reserved.
+alert("Thank you for subscribing to PMD updates!");
+setEmail("");
+
+
+};
+
+return ( <footer className="footer"> <div className="footer-container"> <div className="footer-grid"> <div className="footer-brand"> <p href="#" className="footer-logo">
+PMD </p>
+
+
+        <p className="footer-description">
+          Pel Marketing Distribution provides reliable printing,
+          marketing, digital application, and creative branding solutions
+          for individuals and businesses.
+        </p>
+
+        <div className="footer-hours">
+          <h4>Business Hours</h4>
+          <p>Monday – Friday: 08:00 – 17:00</p>
+          <p>Saturday: 09:00 – 14:00</p>
+          <p>Sunday: Closed</p>
         </div>
       </div>
-    </footer>
-  );
+
+      <div className="footer-links-column">
+        <h3 className="footer-column-title">Quick Links</h3>
+
+        <nav className="footer-links">
+          <p href="#">Home</p>
+          <p href="#">Services</p>
+          <p href="#">Gallery</p>
+          <p href="#">Contact Us</p>
+        </nav>
+      </div>
+
+      <div className="footer-newsletter">
+        <h3 className="footer-column-title">Stay Updated</h3>
+
+        <p className="footer-newsletter-text">
+          Subscribe to receive PMD updates, service announcements, and
+          special offers.
+        </p>
+
+        <form
+          className="newsletter-form"
+          onSubmit={handleSubscribe}
+        >
+          <label htmlFor="newsletter-email" className="sr-only">
+            Email address
+          </label>
+
+          <input
+            id="newsletter-email"
+            type="email"
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
+            placeholder="Enter your email"
+            autoComplete="email"
+          />
+
+          <button type="submit" aria-label="Subscribe to newsletter">
+            <span>Subscribe</span>
+            <FaArrowRight />
+          </button>
+        </form>
+
+        <div className="footer-socials">
+          <button
+            type="button"
+            aria-label="Facebook"
+            onClick={() => console.log("PMD Social Click: Facebook")}
+          >
+            <FaFacebookF />
+          </button>
+
+          <button
+            type="button"
+            aria-label="Instagram"
+            onClick={() => console.log("PMD Social Click: Instagram")}
+          >
+            <FaInstagram />
+          </button>
+
+          <button
+            type="button"
+            aria-label="LinkedIn"
+            onClick={() => console.log("PMD Social Click: LinkedIn")}
+          >
+            <FaLinkedinIn />
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div className="footer-bottom">
+      <p>
+        © {new Date().getFullYear()} PMD — Pel Marketing Distribution.
+        All rights reserved.
+      </p>
+
+      <p>Printing • Marketing • Digital • Branding</p>
+    </div>
+  </div>
+</footer>
+
+
+);
 };
 
 export default Footer;
