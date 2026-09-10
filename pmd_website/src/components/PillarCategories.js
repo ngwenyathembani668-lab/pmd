@@ -1,13 +1,16 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   FaFileInvoice,
   FaPrint,
   FaCamera,
+  FaArrowRight,
 } from "react-icons/fa";
 import "./PillarCategories.css";
 
 const PillarCategories = () => {
   const [activePillar, setActivePillar] = useState(null);
+  const navigate = useNavigate();
 
   const pillars = [
     {
@@ -50,98 +53,97 @@ const PillarCategories = () => {
     },
   ];
 
-  const handlePillarClick = (categoryName) => {
-    setActivePillar(categoryName);
+  const handlePillarClick = (event, pillar) => {
+    event.preventDefault();
 
-    console.log("PMD Pillar Selected: ", categoryName);
+
+    setActivePillar(pillar.name);
+
+    console.log("PMD Pillar Selected: ", pillar.name);
+
+    navigate("/services", {
+      state: {
+        category: pillar.name,
+      },
+    });
+
+
   };
 
-  return (
-    <section className="pillars-section">
-      <div className="pillars-container">
-        {/* Section Header */}
-        <div className="pillars-header">
-          <span className="pillars-eyebrow">
-            What We Do
-          </span>
+  return (<section className="pillars-section"> <div className="pillars-container"> <div className="pillars-header"> <span className="pillars-eyebrow">What We Do</span>
 
-          <h2 className="pillars-title">
-            Everything You Need,
-            <span> All in One Place.</span>
-          </h2>
 
-          <p className="pillars-description">
-            From essential digital applications to professional printing and
-            creative branding, PMD provides practical solutions for your
-            personal and business needs.
-          </p>
-        </div>
+    <h2 className="pillars-title">
+      Everything You Need,
+      <span> All in One Place.</span>
+    </h2>
 
-        {/* Pillar Cards */}
-        <div className="pillars-grid">
-          {pillars.map((pillar) => {
-            const Icon = pillar.icon;
+    <p className="pillars-description">
+      From essential digital applications to professional printing and
+      creative branding, PMD provides practical solutions for your
+      personal and business needs.
+    </p>
+  </div>
 
-            return (
-              <article
-                key={pillar.id}
-                className={`pillar-card ${
-                  activePillar === pillar.name
-                    ? "pillar-card-active"
-                    : ""
-                }`}
-                onClick={() => handlePillarClick(pillar.name)}
-              >
-                {/* Card Header */}
-                <div className="pillar-card-header">
-                  <div className="pillar-icon">
-                    <Icon />
-                  </div>
+    <div className="pillars-grid">
+      {pillars.map((pillar) => {
+        const Icon = pillar.icon;
+        const isActive = activePillar === pillar.name;
 
-                  <span className="pillar-number">
-                    0{pillar.id}
-                  </span>
-                </div>
+        return (
+          <article
+            key={pillar.id}
+            className={`pillar-card ${isActive ? "pillar-card-active" : ""
+              }`}
+          >
+            <div className="pillar-card-header">
+              <div className="pillar-icon">
+                <Icon />
+              </div>
 
-                {/* Card Content */}
-                <div className="pillar-card-content">
-                  <h3 className="pillar-card-title">
-                    {pillar.name}
-                  </h3>
+              <span className="pillar-number">
+                0{pillar.id}
+              </span>
+            </div>
 
-                  <p className="pillar-card-description">
-                    {pillar.description}
-                  </p>
+            <div className="pillar-card-content">
+              <h3 className="pillar-card-title">
+                {pillar.name}
+              </h3>
 
-                  {/* Services */}
-                  <ul className="pillar-services">
-                    {pillar.services.map((service) => (
-                      <li key={service}>
-                        <span className="service-dot"></span>
-                        {service}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+              <p className="pillar-card-description">
+                {pillar.description}
+              </p>
 
-                {/* Bottom Indicator */}
-                <div className="pillar-card-footer">
-                  <span>
-                    Explore services
-                  </span>
+              <ul className="pillar-services">
+                {pillar.services.map((service) => (
+                  <li key={service}>
+                    <span className="service-dot"></span>
+                    {service}
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-                  <span className="pillar-arrow">
-                    →
-                  </span>
-                </div>
-              </article>
-            );
-          })}
-        </div>
-      </div>
-    </section>
+            <button
+              type="button"
+              className="pillar-card-footer"
+              onClick={(event) =>
+                handlePillarClick(event, pillar)
+              }
+            >
+              <span>View All Services</span>
+              <FaArrowRight className="pillar-arrow" />
+            </button>
+          </article>
+        );
+      })}
+    </div>
+  </div>
+  </section>
+
+
   );
 };
 
 export default PillarCategories;
-

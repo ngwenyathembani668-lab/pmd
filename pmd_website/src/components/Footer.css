@@ -295,3 +295,13 @@ min-height: 45px;
 min-height: 45px;
 }
 }
+
+
+.newsletter-error {
+margin: 9px 0 0;
+color: #ef4444;
+font-family: "Poppins", "Montserrat", sans-serif;
+font-size: 0.78rem;
+font-weight: 600;
+line-height: 1.5;
+}

@@ -30,28 +30,7 @@ const TeamShowcase = () => {
       role: "Graphic Designer",
       department: "Design & Print",
       image: "https://i.pravatar.cc/600?img=33",
-    },
-    {
-      id: 4,
-      name: "Zanele Khumalo",
-      role: "Print & Branding Specialist",
-      department: "Design & Print",
-      image: "https://i.pravatar.cc/600?img=44",
-    },
-    {
-      id: 5,
-      name: "Sipho Ndlovu",
-      role: "Digital Applications Specialist",
-      department: "Digital & Admin",
-      image: "https://i.pravatar.cc/600?img=11",
-    },
-    {
-      id: 6,
-      name: "Amahle Mthembu",
-      role: "Administrative Assistant",
-      department: "Digital & Admin",
-      image: "https://i.pravatar.cc/600?img=32",
-    },
+    }
   ];
 
   const departments = [
@@ -65,121 +44,148 @@ const TeamShowcase = () => {
     selectedDepartment === "All"
       ? teamMembers
       : teamMembers.filter(
-          (member) => member.department === selectedDepartment
-        );
+        (member) => member.department === selectedDepartment
+      );
 
-  const handleFilterChange = (department) => {
+  const handleFilterChange = (event, department) => {
+    event.preventDefault();
     setSelectedDepartment(department);
   };
 
-  const handleSocialClick = (memberName, platform) => {
-    console.log(`PMD Team Social Click: ${memberName} - ${platform}`);
+  const handleSocialClick = (event, memberName, platform) => {
+    event.preventDefault();
+
+
+    console.log(
+      `PMD Team Social Click: ${memberName} - ${platform}`
+    );
+
+
   };
 
-  return (
-    <section className="team-showcase">
-      <div className="team-container">
-        <div className="team-header">
-          <span className="team-eyebrow">Meet The Team</span>
+  return (<section className="team-showcase"> <div className="team-container"> <div className="team-header"> <span className="team-eyebrow">Meet The Team</span>
 
-          <h2 className="team-title">
-            The People Behind
-            <span> PMD.</span>
-          </h2>
 
-          <p className="team-description">
-            Meet the dedicated people who bring together professional
-            printing, creative branding, digital applications, and reliable
-            customer service at PMD.
-          </p>
-        </div>
+    <h2 className="team-title">
+      The People Behind
+      <span> PMD.</span>
+    </h2>
 
-        <div className="team-filters" role="group" aria-label="Filter team members">
-          {departments.map((department) => (
-            <button
-              key={department}
-              type="button"
-              className={`team-filter ${
-                selectedDepartment === department
-                  ? "team-filter-active"
-                  : ""
-              }`}
-              onClick={() => handleFilterChange(department)}
-              aria-pressed={selectedDepartment === department}
-            >
-              {department}
-            </button>
-          ))}
-        </div>
+    <p className="team-description">
+      Meet the dedicated people who bring together professional
+      printing, creative branding, digital applications, and reliable
+      customer service at PMD.
+    </p>
+  </div>
 
-        <div className="team-grid">
-          {filteredMembers.map((member) => (
-            <article className="team-card" key={member.id}>
-              <div className="team-image-wrapper">
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="team-image"
-                />
-              </div>
+    <div
+      className="team-filters"
+      role="group"
+      aria-label="Filter team members"
+    >
+      {departments.map((department) => (
+        <button
+          key={department}
+          type="button"
+          className={`team-filter ${selectedDepartment === department
+              ? "team-filter-active"
+              : ""
+            }`}
+          onClick={(event) =>
+            handleFilterChange(event, department)
+          }
+          aria-pressed={selectedDepartment === department}
+        >
+          {department}
+        </button>
+      ))}
+    </div>
 
-              <div className="team-card-content">
-                <span className="team-department">
-                  {member.department}
-                </span>
-
-                <h3 className="team-member-name">{member.name}</h3>
-
-                <p className="team-member-role">{member.role}</p>
-
-                <div className="team-socials">
-                  <button
-                    type="button"
-                    className="team-social"
-                    aria-label={`${member.name} LinkedIn`}
-                    onClick={() =>
-                      handleSocialClick(member.name, "LinkedIn")
-                    }
-                  >
-                    <FaLinkedinIn />
-                  </button>
-
-                  <button
-                    type="button"
-                    className="team-social"
-                    aria-label={`Email ${member.name}`}
-                    onClick={() =>
-                      handleSocialClick(member.name, "Email")
-                    }
-                  >
-                    <FaEnvelope />
-                  </button>
-
-                  <button
-                    type="button"
-                    className="team-social"
-                    aria-label={`Call ${member.name}`}
-                    onClick={() =>
-                      handleSocialClick(member.name, "Phone")
-                    }
-                  >
-                    <FaPhoneAlt />
-                  </button>
-                </div>
-              </div>
-            </article>
-          ))}
-        </div>
-
-        {filteredMembers.length === 0 && (
-          <div className="team-empty">
-            <p>No team members found in this department.</p>
+    <div className="team-grid">
+      {filteredMembers.map((member) => (
+        <article className="team-card" key={member.id}>
+          <div className="team-image-wrapper">
+            <img
+              src={member.image}
+              alt={member.name}
+              className="team-image"
+            />
           </div>
-        )}
+
+          <div className="team-card-content">
+            <span className="team-department">
+              {member.department}
+            </span>
+
+            <h3 className="team-member-name">
+              {member.name}
+            </h3>
+
+            <p className="team-member-role">
+              {member.role}
+            </p>
+
+            <div className="team-socials">
+              <button
+                type="button"
+                className="team-social"
+                aria-label={`${member.name} LinkedIn`}
+                onClick={(event) =>
+                  handleSocialClick(
+                    event,
+                    member.name,
+                    "LinkedIn"
+                  )
+                }
+              >
+                <FaLinkedinIn />
+              </button>
+
+              <button
+                type="button"
+                className="team-social"
+                aria-label={`Email ${member.name}`}
+                onClick={(event) =>
+                  handleSocialClick(
+                    event,
+                    member.name,
+                    "Email"
+                  )
+                }
+              >
+                <FaEnvelope />
+              </button>
+
+              <button
+                type="button"
+                className="team-social"
+                aria-label={`Call ${member.name}`}
+                onClick={(event) =>
+                  handleSocialClick(
+                    event,
+                    member.name,
+                    "Phone"
+                  )
+                }
+              >
+                <FaPhoneAlt />
+              </button>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    {filteredMembers.length === 0 && (
+      <div className="team-empty">
+        <p>No team members found in this department.</p>
       </div>
-    </section>
+    )}
+  </div>
+  </section>
+
+
   );
 };
 
 export default TeamShowcase;
-
