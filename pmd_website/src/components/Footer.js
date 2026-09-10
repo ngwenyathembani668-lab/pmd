@@ -37,8 +37,8 @@ PMD </p>
 
         <div className="footer-hours">
           <h4>Business Hours</h4>
-          <p>Monday – Friday: 08:00 – 17:00</p>
-          <p>Saturday: 09:00 – 14:00</p>
+          <p>Monday – Friday: 08:00 – 18:00</p>
+          <p>Saturday: 08:00 – 14:00</p>
           <p>Sunday: Closed</p>
         </div>
       </div>

@@ -1,37 +1,73 @@
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { FaBars, FaTimes } from "react-icons/fa";
 import "./Header.css";
 
-const navLinks = ["Home", "Services & Gallery", "Contact Us"];
+const Header = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
-export default function Header() {
-  return (
-    <header className="header">
-      <nav className="navbar">
-        {/* Logo */}
-        <div className="logo" aria-label="PMD Logo">
-          PMD
-        </div>
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
 
-        {/* Desktop Navigation */}
-        <div className="nav-links">
-          {navLinks.map((link) => (
-            <p href="#" key={link} className="nav-link">
-              {link}
-            </p>
-          ))}
-        </div>
+  return (<header className="header"> <nav className="navbar"> <Link to="/" className="logo" onClick={closeMenu}>
+    PMD </Link>
 
-        {/* Desktop CTA */}
-        <p href="#" className="cta-button">
-          Get a Free Quote
-        </p>
 
-        {/* Mobile Hamburger - visual only */}
-        <div className="hamburger" aria-label="Mobile menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </nav>
-    </header>
+    <div className="nav-links">
+      <Link to="/" className="nav-link">
+        Home
+      </Link>
+
+      <Link to="/services" className="nav-link">
+        Services & Gallery
+      </Link>
+
+      <Link to="/contact" className="nav-link">
+        Contact Us
+      </Link>
+    </div>
+
+    <Link to="/contact" className="cta-button">
+      Get a Free Quote
+    </Link>
+
+    <button
+      type="button"
+      className="hamburger"
+      onClick={() => setIsOpen((current) => !current)}
+      aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
+      aria-expanded={isOpen}
+    >
+      {isOpen ? <FaTimes /> : <FaBars />}
+    </button>
+
+    <div className={`mobile-menu ${isOpen ? "mobile-menu-open" : ""}`}>
+      <Link to="/" onClick={closeMenu}>
+        Home
+      </Link>
+
+      <Link to="/services" onClick={closeMenu}>
+        Services & Gallery
+      </Link>
+
+      <Link to="/contact" onClick={closeMenu}>
+        Contact Us
+      </Link>
+
+      <Link
+        to="/contact"
+        className="mobile-cta"
+        onClick={closeMenu}
+      >
+        Get a Free Quote
+      </Link>
+    </div>
+  </nav>
+  </header>
+
+
   );
-}
+};
+
+export default Header;
