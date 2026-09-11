@@ -1,12 +1,20 @@
+// ```jsx id="4w8n2k"
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import {
   FaFacebookF,
   FaInstagram,
-  FaLinkedinIn,
-  FaArrowRight,
+  FaWhatsapp,
+  FaTiktok,
 } from "react-icons/fa";
 import "./Footer.css";
+
+const socialLinks = {
+  facebook: "https://www.facebook.com/YOUR_PMD_PAGE",
+  instagram: "https://www.instagram.com/YOUR_PMD_ACCOUNT",
+  whatsapp: "https://wa.me/YOUR_WHATSAPP_NUMBER",
+  tiktok: "https://www.tiktok.com/@YOUR_PMD_ACCOUNT",
+};
 
 const Footer = () => {
   const [email, setEmail] = useState("");
@@ -15,189 +23,182 @@ const Footer = () => {
   const handleSubscribe = (event) => {
     event.preventDefault();
 
-
     const trimmedEmail = email.trim();
 
-    if (!trimmedEmail) {
-      setError("Please enter your email address.");
-
-      setTimeout(() => {
-        setError("");
-      }, 3000);
-
-      return;
-    }
-
     if (
+      !trimmedEmail ||
       !trimmedEmail.includes("@") ||
       !trimmedEmail.includes(".")
     ) {
       setError("Please enter a valid email address.");
-
-      setTimeout(() => {
-        setError("");
-      }, 3000);
-
       return;
     }
 
-    setError("");
-
     alert("Thank you for subscribing to PMD updates!");
-
     setEmail("");
-
-
+    setError("");
   };
 
-  const handleSocialClick = (event, platform) => {
-    event.preventDefault();
+  return (
+    <footer className="footer">
+      <div className="footer-container">
+        <div className="footer-brand">
+          <Link to="/" className="footer-logo">
+            PMD
+          </Link>
 
+          <p className="footer-description">
+            Pel Marketing Distribution provides reliable printing,
+            marketing, branding, and digital application services for
+            individuals and businesses.
+          </p>
 
-    console.log(`PMD Social Click: ${platform}`);
+          <div className="footer-hours">
+            <span className="footer-hours-title">
+              Business Hours
+            </span>
 
+            <p>Monday – Friday: 08:00 – 18:00</p>
+            <p>Saturday: 08:00 – 14:00</p>
+            <p>Sunday: Closed</p>
+          </div>
 
-  };
+          <div className="footer-socials">
+            <a
+              href={socialLinks.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-social-link"
+              aria-label="PMD on Facebook"
+            >
+              <FaFacebookF />
+            </a>
 
-  return (<footer className="footer"> <div className="footer-container"> <div className="footer-grid"> <div className="footer-brand"> <Link to="/" className="footer-logo">
-    PMD </Link>
+            <a
+              href={socialLinks.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-social-link"
+              aria-label="PMD on Instagram"
+            >
+              <FaInstagram />
+            </a>
 
-    <p className="footer-description">
-      Pel Marketing Distribution provides reliable printing,
-      marketing, digital application, and creative branding
-      solutions for individuals and businesses.
-    </p>
+            <a
+              href={socialLinks.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-social-link"
+              aria-label="Contact PMD on WhatsApp"
+            >
+              <FaWhatsapp />
+            </a>
 
-    <div className="footer-hours">
-      <h4>Business Hours</h4>
+            <a
+              href={socialLinks.tiktok}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-social-link"
+              aria-label="PMD on TikTok"
+            >
+              <FaTiktok />
+            </a>
+          </div>
+        </div>
 
-      <p>Monday – Friday: 08:00 – 18:00</p>
-      <p>Saturday: 08:00 – 14:00</p>
-      <p>Sunday: Closed</p>
-    </div>
-  </div>
+        <div className="footer-links-column">
+          <h3 className="footer-column-title">
+            Quick Links
+          </h3>
 
-    <div className="footer-links-column">
-      <h3 className="footer-column-title">
-        Quick Links
-      </h3>
+          <ul className="footer-links">
+            <li>
+              <Link to="/">Home</Link>
+            </li>
 
-      <nav className="footer-links">
-        <Link to="/">Home</Link>
-        <Link to="/services">Services</Link>
-        <Link to="/services">Gallery</Link>
-        <Link to="/contact">Contact Us</Link>
-      </nav>
-    </div>
+            <li>
+              <Link to="/services">
+                Services & Gallery
+              </Link>
+            </li>
 
-    <div className="footer-newsletter">
-      <h3 className="footer-column-title">
-        Stay Updated
-      </h3>
+            <li>
+              <Link to="/contact">
+                Contact Us
+              </Link>
+            </li>
 
-      <p className="footer-newsletter-text">
-        Subscribe to receive PMD updates, service announcements,
-        and special offers.
-      </p>
+            <li>
+              <Link to="/privacy-policy">
+                Privacy Policy (POPIA)
+              </Link>
+            </li>
+          </ul>
+        </div>
 
-      <form
-        className="newsletter-form"
-        onSubmit={handleSubscribe}
-        noValidate
-      >
-        <label
-          htmlFor="newsletter-email"
-          className="sr-only"
-        >
-          Email address
-        </label>
+        <div className="footer-newsletter">
+          <div className="footer-newsletter-box">
+            <span className="footer-newsletter-eyebrow">
+              Stay Connected
+            </span>
 
-        <input
-          id="newsletter-email"
-          type="email"
-          value={email}
-          onChange={(event) => {
-            setEmail(event.target.value);
+            <h3 className="footer-newsletter-title">
+              Get PMD Updates.
+            </h3>
 
-            if (error) {
-              setError("");
-            }
-          }}
-          placeholder="Enter your email"
-          autoComplete="email"
-          aria-invalid={Boolean(error)}
-          aria-describedby={
-            error
-              ? "newsletter-error"
-              : undefined
-          }
-        />
+            <p className="footer-newsletter-text">
+              Subscribe for service updates, business information,
+              and occasional PMD offers.
+            </p>
 
-        <button type="submit">
-          <span>Subscribe</span>
-          <FaArrowRight />
-        </button>
-      </form>
+            <form
+              className="newsletter-form"
+              onSubmit={handleSubscribe}
+            >
+              <input
+                type="email"
+                value={email}
+                onChange={(event) => {
+                  setEmail(event.target.value);
 
-      {error && (
-        <p
-          id="newsletter-error"
-          className="newsletter-error"
-          role="alert"
-        >
-          {error}
-        </p>
-      )}
+                  if (error) {
+                    setError("");
+                  }
+                }}
+                placeholder="Enter your email"
+                aria-label="Email address"
+                aria-invalid={Boolean(error)}
+              />
 
-      <div className="footer-socials">
-        <button
-          type="button"
-          aria-label="Facebook"
-          onClick={(event) =>
-            handleSocialClick(event, "Facebook")
-          }
-        >
-          <FaFacebookF />
-        </button>
+              <button type="submit">
+                Subscribe
+              </button>
+            </form>
 
-        <button
-          type="button"
-          aria-label="Instagram"
-          onClick={(event) =>
-            handleSocialClick(event, "Instagram")
-          }
-        >
-          <FaInstagram />
-        </button>
-
-        <button
-          type="button"
-          aria-label="LinkedIn"
-          onClick={(event) =>
-            handleSocialClick(event, "LinkedIn")
-          }
-        >
-          <FaLinkedinIn />
-        </button>
+            {error && (
+              <p className="newsletter-error">
+                {error}
+              </p>
+            )}
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
 
-    <div className="footer-bottom">
-      <p>
-        © {new Date().getFullYear()} PMD — Pel Marketing
-        Distribution. All rights reserved.
-      </p>
+      <div className="footer-bottom">
+        <div className="footer-bottom-container">
+          <p>
+            © {new Date().getFullYear()} PMD (Pel Marketing
+            Distribution). All rights reserved.
+          </p>
 
-      <p>
-        Printing • Marketing • Digital • Branding
-      </p>
-    </div>
-  </div>
-  </footer>
-
-
+          <Link to="/privacy-policy">
+            Privacy Policy
+          </Link>
+        </div>
+      </div>
+    </footer>
   );
 };
 
 export default Footer;
+

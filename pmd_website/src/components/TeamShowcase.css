@@ -20,7 +20,7 @@
 .team-eyebrow {
   display: inline-block;
   margin-bottom: 14px;
-  color: #0ea5e9;
+  color: #0369a1;
   font-family: "Poppins", "Montserrat", sans-serif;
   font-size: 0.8rem;
   font-weight: 700;
@@ -39,7 +39,7 @@
 }
 
 .team-title span {
-  color: #0ea5e9;
+  color: #0369a1;
 }
 
 .team-description {
@@ -79,21 +79,21 @@
 }
 
 .team-filter:hover {
-  border-color: #0ea5e9;
-  color: #0ea5e9;
+  border-color: #0369a1;
+  color: #0369a1;
   transform: translateY(-2px);
 }
 
 .team-filter-active {
-  border-color: #0ea5e9;
-  background: #0ea5e9;
+  border-color: #0369a1;
+  background: #0369a1;
   color: #ffffff;
-  box-shadow: 0 8px 20px rgba(14, 165, 233, 0.2);
+  box-shadow: 0 8px 20px rgba(3, 105, 161, 0.2);
 }
 
 .team-filter-active:hover {
   color: #ffffff;
-  background: #0ea5e9;
+  background: #0369a1;
   transform: translateY(-2px);
 }
 
@@ -161,7 +161,7 @@
 .team-department {
   display: inline-block;
   margin-bottom: 10px;
-  color: #0ea5e9;
+  color: #0369a1;
   font-family: "Poppins", "Montserrat", sans-serif;
   font-size: 0.72rem;
   font-weight: 700;
@@ -213,8 +213,8 @@
 }
 
 .team-social:hover {
-  border-color: #0ea5e9;
-  background: #0ea5e9;
+  border-color: #0369a1;
+  background: #0369a1;
   color: #ffffff;
   transform: translateY(-3px);
 }
@@ -323,3 +323,83 @@
   }
 }
 
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 260px);
+  justify-content: center;
+  gap: 24px;
+  width: 100%;
+}
+
+.team-card {
+  width: 260px;
+}
+
+@media (max-width: 900px) {
+  .team-grid {
+    grid-template-columns: repeat(3, 220px);
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .team-card {
+    width: 220px;
+  }
+}
+
+@media (max-width: 640px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 20px;
+  }
+
+  .team-card {
+    width: min(100%, 320px);
+  }
+}
+
+/* .team-socials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  margin-top: 16px;
+}
+
+.team-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid #e2e8f0;
+  border-radius: 7px;
+  background: #ffffff;
+  color: #64748b;
+  font-size: 0.8rem;
+  text-decoration: none;
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.team-social:hover {
+  border-color: #0ea5e9;
+  background: #0ea5e9;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 640px) {
+  .team-socials {
+    gap: 8px;
+  }
+
+  .team-social {
+    width: 36px;
+    height: 36px;
+  }
+} */

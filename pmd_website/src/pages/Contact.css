@@ -1,0 +1,603 @@
+.contact-page {
+width: 100%;
+min-height: 100vh;
+background: #f8fafc;
+color: #1e293b;
+font-family: "Poppins", "Montserrat", sans-serif;
+}
+
+.contact-hero {
+width: 100%;
+padding: 90px 32px 80px;
+background: #1e293b;
+color: #f8fafc;
+}
+
+.contact-hero-container {
+width: 100%;
+max-width: 1280px;
+margin: 0 auto;
+}
+
+.contact-eyebrow,
+.contact-section-eyebrow {
+display: inline-block;
+color: #e2e8f0;
+font-size: 0.78rem;
+font-weight: 700;
+letter-spacing: 0.15em;
+text-transform: uppercase;
+}
+
+.contact-eyebrow {
+margin-bottom: 18px;
+}
+
+.contact-title {
+max-width: 850px;
+margin: 0;
+font-size: clamp(2.5rem, 5vw, 4.5rem);
+font-weight: 800;
+line-height: 1.08;
+letter-spacing: -0.04em;
+}
+
+.contact-title span {
+display: block;
+color: #38bdf8;
+}
+
+.contact-intro {
+max-width: 700px;
+margin: 28px 0 0;
+color: #cbd5e1;
+font-size: 1rem;
+line-height: 1.8;
+}
+
+.contact-content {
+width: 100%;
+padding: 80px 32px 110px;
+}
+
+.contact-container {
+width: 100%;
+max-width: 1280px;
+margin: 0 auto;
+}
+
+.contact-layout {
+display: grid;
+grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+gap: 70px;
+align-items: start;
+}
+
+.contact-information {
+padding-top: 12px;
+}
+
+.contact-information-header {
+margin-bottom: 42px;
+}
+
+.contact-information-header h2,
+.contact-form-header h2 {
+margin: 12px 0 16px;
+color: #1e293b;
+font-size: clamp(2rem, 3.5vw, 3rem);
+font-weight: 800;
+line-height: 1.12;
+letter-spacing: -0.035em;
+}
+
+.contact-information-header h2 span,
+.contact-form-header h2 span {
+color: #0369a1;
+}
+
+.contact-information-header p,
+.contact-form-header p {
+margin: 0;
+color: #64748b;
+font-size: 0.9rem;
+line-height: 1.8;
+}
+
+.contact-details {
+display: flex;
+flex-direction: column;
+gap: 15px;
+}
+
+.contact-detail-card {
+display: flex;
+align-items: flex-start;
+gap: 17px;
+padding: 20px;
+border: 1px solid #e2e8f0;
+border-radius: 12px;
+background: #ffffff;
+transition:
+transform 0.25s ease,
+border-color 0.25s ease,
+box-shadow 0.25s ease;
+}
+
+.contact-detail-card:hover {
+transform: translateY(-3px);
+border-color: #bae6fd;
+box-shadow: 0 12px 25px rgba(30, 41, 59, 0.06);
+}
+
+.contact-detail-icon {
+display: flex;
+align-items: center;
+justify-content: center;
+flex-shrink: 0;
+width: 42px;
+height: 42px;
+border-radius: 9px;
+background: #e0f2fe;
+color: #0369a1;
+font-size: 0.9rem;
+}
+
+.contact-detail-label {
+display: block;
+margin-bottom: 5px;
+color: #1e293b;
+font-size: 0.82rem;
+font-weight: 800;
+}
+
+.contact-detail-card p {
+margin: 0;
+color: #64748b;
+font-size: 0.78rem;
+line-height: 1.7;
+}
+
+.whatsapp-button {
+display: flex;
+align-items: center;
+width: 100%;
+gap: 15px;
+margin-top: 25px;
+padding: 20px;
+border: 0;
+border-radius: 13px;
+background: #1e293b;
+color: #ffffff;
+font-family: "Poppins", "Montserrat", sans-serif;
+text-align: left;
+cursor: pointer;
+transition:
+transform 0.25s ease,
+background 0.25s ease,
+box-shadow 0.25s ease;
+}
+
+.whatsapp-button:hover {
+transform: translateY(-4px);
+background: #0369a1;
+box-shadow: 0 15px 30px rgba(3, 105, 161, 0.2);
+}
+
+.whatsapp-icon {
+display: flex;
+align-items: center;
+justify-content: center;
+flex-shrink: 0;
+width: 48px;
+height: 48px;
+border-radius: 50%;
+background: rgba(255, 255, 255, 0.12);
+font-size: 1.35rem;
+}
+
+.whatsapp-content {
+display: flex;
+flex: 1;
+flex-direction: column;
+gap: 3px;
+}
+
+.whatsapp-content small {
+color: #cbd5e1;
+font-size: 0.68rem;
+font-weight: 500;
+}
+
+.whatsapp-content strong {
+color: #ffffff;
+font-size: 0.82rem;
+font-weight: 700;
+}
+
+.whatsapp-arrow {
+flex-shrink: 0;
+font-size: 0.8rem;
+transition: transform 0.25s ease;
+}
+
+.whatsapp-button:hover .whatsapp-arrow {
+transform: translateX(5px);
+}
+
+.contact-form-wrapper {
+padding: 42px;
+border: 1px solid #e2e8f0;
+border-radius: 20px;
+background: #ffffff;
+box-shadow: 0 15px 45px rgba(30, 41, 59, 0.07);
+}
+
+.contact-form-header {
+margin-bottom: 35px;
+}
+
+.contact-form {
+display: flex;
+flex-direction: column;
+gap: 22px;
+}
+
+.form-row {
+display: grid;
+grid-template-columns: repeat(2, minmax(0, 1fr));
+gap: 18px;
+}
+
+.form-field {
+display: flex;
+flex-direction: column;
+min-width: 0;
+}
+
+.form-field label {
+margin-bottom: 8px;
+color: #1e293b;
+font-size: 0.78rem;
+font-weight: 700;
+}
+
+.form-field label span {
+color: #475569;
+font-weight: 500;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+width: 100%;
+border: 1px solid #cbd5e1;
+border-radius: 9px;
+outline: none;
+background: #f8fafc;
+color: #1e293b;
+font-family: "Poppins", "Montserrat", sans-serif;
+font-size: 0.82rem;
+transition:
+border-color 0.25s ease,
+box-shadow 0.25s ease,
+background 0.25s ease;
+}
+
+.form-field input,
+.form-field select {
+height: 50px;
+padding: 0 14px;
+}
+
+.form-field textarea {
+min-height: 140px;
+padding: 14px;
+resize: vertical;
+line-height: 1.7;
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+color: #94a3b8;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+border-color: #0369a1;
+background: #ffffff;
+box-shadow: 0 0 0 3px rgba(3, 105, 161, 0.1);
+}
+
+.form-field input[aria-invalid="true"],
+.form-field select[aria-invalid="true"],
+.form-field textarea[aria-invalid="true"] {
+border-color: #ef4444;
+}
+
+.form-error {
+margin-top: 6px;
+color: #ef4444;
+font-size: 0.7rem;
+font-weight: 600;
+line-height: 1.5;
+}
+
+.file-input-wrapper {
+position: relative;
+display: flex;
+align-items: center;
+gap: 10px;
+min-height: 50px;
+padding: 0 14px;
+overflow: hidden;
+border: 1px dashed #cbd5e1;
+border-radius: 9px;
+background: #f8fafc;
+color: #0ea5e9;
+transition:
+border-color 0.25s ease,
+background 0.25s ease;
+}
+
+.file-input-wrapper:hover {
+border-color: #0369a1;
+background: #f0f9ff;
+}
+
+.file-input-wrapper input {
+position: absolute;
+inset: 0;
+width: 100%;
+height: 100%;
+opacity: 0;
+cursor: pointer;
+}
+
+.file-input-text {
+overflow: hidden;
+color: #64748b;
+font-size: 0.75rem;
+font-weight: 500;
+text-overflow: ellipsis;
+white-space: nowrap;
+}
+
+.contact-submit-button {
+display: flex;
+align-items: center;
+justify-content: space-between;
+width: 100%;
+min-height: 54px;
+margin-top: 5px;
+padding: 0 20px;
+border: 0;
+border-radius: 9px;
+background: #0369a1;
+color: #ffffff;
+font-family: "Poppins", "Montserrat", sans-serif;
+font-size: 0.85rem;
+font-weight: 700;
+cursor: pointer;
+transition:
+background 0.25s ease,
+transform 0.25s ease,
+box-shadow 0.25s ease;
+}
+
+.contact-submit-button:hover {
+transform: translateY(-2px);
+background: #0284c7;
+box-shadow: 0 12px 25px rgba(3, 105, 161, 0.2);
+}
+
+.contact-submit-button svg {
+transition: transform 0.25s ease;
+}
+
+.contact-submit-button:hover svg {
+transform: translateX(5px);
+}
+
+.success-modal-overlay {
+position: fixed;
+z-index: 1000;
+inset: 0;
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 24px;
+background: rgba(15, 23, 42, 0.7);
+backdrop-filter: blur(5px);
+}
+
+.success-modal {
+position: relative;
+width: 100%;
+max-width: 480px;
+padding: 45px 35px 35px;
+border-radius: 18px;
+background: #ffffff;
+box-shadow: 0 25px 70px rgba(15, 23, 42, 0.25);
+text-align: center;
+animation: successModalIn 0.3s ease;
+}
+
+.success-modal-close {
+position: absolute;
+top: 15px;
+right: 15px;
+display: flex;
+align-items: center;
+justify-content: center;
+width: 35px;
+height: 35px;
+border: 0;
+border-radius: 50%;
+background: #f1f5f9;
+color: #64748b;
+cursor: pointer;
+transition:
+background 0.2s ease,
+color 0.2s ease;
+}
+
+.success-modal-close:hover {
+background: #e2e8f0;
+color: #1e293b;
+}
+
+.success-icon {
+display: flex;
+align-items: center;
+justify-content: center;
+margin: 0 auto 20px;
+color: #0369a1;
+font-size: 3.5rem;
+}
+
+.success-modal h2 {
+margin: 0 0 13px;
+color: #1e293b;
+font-size: 1.5rem;
+font-weight: 800;
+}
+
+.success-modal p {
+margin: 0 auto;
+color: #64748b;
+font-size: 0.85rem;
+line-height: 1.8;
+}
+
+.success-modal-button {
+min-width: 130px;
+margin-top: 25px;
+padding: 12px 20px;
+border: 0;
+border-radius: 8px;
+background: #0ea5e9;
+color: #ffffff;
+font-family: "Poppins", "Montserrat", sans-serif;
+font-size: 0.82rem;
+font-weight: 700;
+cursor: pointer;
+transition:
+background 0.25s ease,
+transform 0.25s ease;
+}
+
+.success-modal-button:hover {
+transform: translateY(-2px);
+background: #0284c7;
+}
+
+@keyframes successModalIn {
+from {
+opacity: 0;
+transform: translateY(15px) scale(0.97);
+}
+
+to {
+opacity: 1;
+transform: translateY(0) scale(1);
+}
+}
+
+@media (max-width: 1050px) {
+.contact-layout {
+grid-template-columns: 1fr;
+gap: 55px;
+}
+
+.contact-information {
+max-width: 800px;
+}
+
+.contact-form-wrapper {
+width: 100%;
+}
+}
+
+@media (max-width: 768px) {
+.contact-hero {
+padding: 65px 24px 60px;
+}
+
+.contact-content {
+padding: 60px 24px 80px;
+}
+
+.contact-information-header {
+margin-bottom: 30px;
+}
+
+.contact-form-wrapper {
+padding: 32px 25px;
+}
+}
+
+@media (max-width: 600px) {
+.contact-hero {
+padding: 55px 20px 50px;
+}
+
+.contact-content {
+padding: 50px 20px 70px;
+}
+
+.form-row {
+grid-template-columns: 1fr;
+gap: 22px;
+}
+
+.contact-form-wrapper {
+padding: 28px 20px;
+border-radius: 15px;
+}
+
+.contact-information-header h2,
+.contact-form-header h2 {
+font-size: 2rem;
+}
+
+.contact-detail-card {
+padding: 17px;
+}
+
+.whatsapp-button {
+padding: 17px;
+}
+
+.success-modal {
+padding: 40px 25px 30px;
+}
+}
+
+@media (max-width: 400px) {
+.contact-hero {
+padding: 45px 16px;
+}
+
+.contact-content {
+padding-right: 16px;
+padding-left: 16px;
+}
+
+.contact-title {
+font-size: 2.2rem;
+}
+
+.contact-intro {
+font-size: 0.88rem;
+}
+
+.contact-form-wrapper {
+padding: 25px 17px;
+}
+
+.whatsapp-content strong {
+font-size: 0.75rem;
+}
+}

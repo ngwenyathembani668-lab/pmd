@@ -4,7 +4,10 @@
 :root {
   --slate-900: #1e293b;
   --slate-50: #f8fafc;
-  --cyan-500: #0ea5e9;
+  --brand-primary: #0369a1;
+  --brand-primary-hover: #0284c7;
+  --brand-primary-soft: #e0f2fe;
+  --card-number: #475569;
   --text-primary: #0f172a;
   font-family: "Inter", "Segoe UI", sans-serif;
   line-height: 1.5;

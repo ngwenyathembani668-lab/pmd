@@ -1,24 +1,38 @@
-import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React, { useEffect } from "react";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 
 import Home from "./pages/Home";
 import Services from "./pages/Services";
+import Contact from "./pages/Contact";
+import PrivatePolicy from "./pages/PrivatePolicy";
 
-// const Services = () => {
-//   return (<div> <h1>Services & Gallery</h1> </div>
-//   );
-// };
 
-const Contact = () => {
-  return (<div> <h1>Contact Us</h1> </div>
-  );
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "auto",
+    });
+  }, [pathname]);
+
+  return null;
 };
 
+
 function App() {
-  return (<BrowserRouter> <Routes>
-    <Route path="/" element={<Home />} />
-    <Route path="/services" element={<Services />} />
-    <Route path="/contact" element={<Contact />} /> </Routes> </BrowserRouter>
+  return (<BrowserRouter>
+    <ScrollToTop /> <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/services" element={<Services />} />
+      <Route path="/contact" element={<Contact />} />
+      <Route
+        path="/privacy-policy"
+        element={<PrivatePolicy />}
+      />
+    </Routes> </BrowserRouter>
   );
 }
 

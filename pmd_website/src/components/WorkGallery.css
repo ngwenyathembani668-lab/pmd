@@ -19,7 +19,7 @@ text-align: center;
 .work-gallery-eyebrow {
 display: inline-block;
 margin-bottom: 14px;
-color: #0ea5e9;
+color: #0369a1;
 font-family: "Poppins", "Montserrat", sans-serif;
 font-size: 0.8rem;
 font-weight: 700;
@@ -38,7 +38,7 @@ letter-spacing: -0.04em;
 }
 
 .work-gallery-title span {
-color: #0ea5e9;
+color: #0369a1;
 }
 
 .work-gallery-description {
@@ -135,7 +135,7 @@ transform: translateY(0);
 }
 
 .work-gallery-item:focus-visible {
-outline: 3px solid #0ea5e9;
+outline: 3px solid #0369a1;
 outline-offset: 3px;
 }
 
@@ -203,7 +203,7 @@ transform 0.25s ease;
 }
 
 .work-lightbox-close:hover {
-background: #0ea5e9;
+background: #0369a1;
 color: #ffffff;
 transform: rotate(90deg);
 }

@@ -19,7 +19,7 @@ text-align: center;
 .why-choose-eyebrow {
 display: inline-block;
 margin-bottom: 14px;
-color: #0ea5e9;
+color: #0369a1;
 font-family: "Poppins", "Montserrat", sans-serif;
 font-size: 0.8rem;
 font-weight: 700;
@@ -38,7 +38,7 @@ letter-spacing: -0.04em;
 }
 
 .why-choose-title span {
-color: #0ea5e9;
+color: #0369a1;
 }
 
 .why-choose-description {
@@ -75,8 +75,8 @@ transform: translateY(-5px);
 }
 
 .benefit-card-active {
-border-color: #0ea5e9;
-box-shadow: 0 16px 35px rgba(14, 165, 233, 0.12);
+border-color: #0369a1;
+box-shadow: 0 16px 35px rgba(3, 105, 161, 0.12);
 }
 
 .benefit-card-trigger {
@@ -102,7 +102,7 @@ height: 58px;
 margin-right: 18px;
 border-radius: 16px;
 background: #e0f2fe;
-color: #0ea5e9;
+color: #0369a1;
 font-size: 1.35rem;
 transition:
 background-color 0.3s ease,
@@ -110,7 +110,7 @@ color 0.3s ease;
 }
 
 .benefit-card-active .benefit-icon {
-background: #0ea5e9;
+background: #0369a1;
 color: #ffffff;
 }
 
@@ -121,7 +121,7 @@ min-width: 0;
 .benefit-number {
 display: block;
 margin-bottom: 7px;
-color: #94a3b8;
+color: #475569;
 font-family: "Poppins", "Montserrat", sans-serif;
 font-size: 0.7rem;
 font-weight: 700;
@@ -154,7 +154,7 @@ transform 0.3s ease;
 }
 
 .benefit-chevron-active {
-background: #0ea5e9;
+background: #0369a1;
 color: #ffffff;
 transform: rotate(180deg);
 }
@@ -190,7 +190,7 @@ opacity: 1;
 }
 
 .benefit-card-trigger:focus-visible {
-outline: 3px solid #0ea5e9;
+outline: 3px solid #0369a1;
 outline-offset: -3px;
 }
 
