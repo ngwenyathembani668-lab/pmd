@@ -129,6 +129,12 @@ const Footer = () => {
             </li>
 
             <li>
+              <Link to="/prices">
+                Pricing
+              </Link>
+            </li>
+
+            <li>
               <Link to="/privacy-policy">
                 Privacy Policy (POPIA)
               </Link>

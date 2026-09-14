@@ -68,6 +68,10 @@ const Header = () => {
           <Link to="/contact" className="nav-link">
             Contact Us
           </Link>
+
+          <Link to="/prices" className="nav-link">
+            Pricing
+          </Link>
         </div>
 
         <Link

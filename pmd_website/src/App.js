@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Services from "./pages/Services";
 import Contact from "./pages/Contact";
 import PrivatePolicy from "./pages/PrivatePolicy";
+import PricingPage from "./pages/PricingPage";
 
 
 const ScrollToTop = () => {
@@ -31,6 +32,10 @@ function App() {
       <Route
         path="/privacy-policy"
         element={<PrivatePolicy />}
+      />
+      <Route
+        path="/prices"
+        element={<PricingPage />}
       />
     </Routes> </BrowserRouter>
   );
