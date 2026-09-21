@@ -1,0 +1,4 @@
+[build]
+  base = "pmd_website"
+  command = "npm install && npm run build"
+  publish = "pmd_website/build"
