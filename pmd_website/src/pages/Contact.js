@@ -155,16 +155,16 @@ const Contact = () => {
 
     };
 
-    const handleWhatsAppClick = (event) => {
-        event.preventDefault();
+    // const handleWhatsAppClick = (event) => {
+    //     event.preventDefault();
 
 
-        console.log("PMD WhatsApp Chat Opened");
+    //     console.log("PMD WhatsApp Chat Opened");
 
-        alert("Opening PMD WhatsApp chat...");
+    //     alert("Opening PMD WhatsApp chat...");
 
 
-    };
+    // };
 
     const handleCloseSuccess = (event) => {
         event.preventDefault();
@@ -268,10 +268,11 @@ const Contact = () => {
                             </div>
                         </div>
 
-                        <button
-                            type="button"
+                        <a
+                            href="https://wa.me/27624347357?text=Hello%20PMD%2C%20I%20would%20like%20to%20make%20an%20enquiry."
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="whatsapp-button"
-                            onClick={handleWhatsAppClick}
                         >
                             <span className="whatsapp-icon">
                                 <FaWhatsapp />
@@ -283,12 +284,12 @@ const Contact = () => {
                             </span>
 
                             <FaArrowRight className="whatsapp-arrow" />
-                        </button>
+                        </a>
                     </div>
 
                     <div className="contact-form-wrapper">
                         <div className="contact-form-header">
-                            <span style={{color: '#0369a1'}} className="contact-section-eyebrow">
+                            <span style={{ color: '#0369a1' }} className="contact-section-eyebrow">
                                 Send An Enquiry
                             </span>
 
